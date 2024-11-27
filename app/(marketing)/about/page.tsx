@@ -28,27 +28,29 @@ function Culture() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-24 sm:mt-32 lg:mt-40 lg:py-32">
       <SectionIntro
-        eyebrow="Our culture"
-        title="Balance your passion with your passion for life."
+        eyebrow="Мрії повинні здійснюватися!"
+        title="Знайди свою пристрасть до життя через танець"
         invert
       >
         <p>
-          We are a group of like-minded people who share the same core values.
+          Ми — група однодумців, які поділяють однакові основні цінності.
         </p>
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Loyalty" invert>
-            Our team has been with us since the beginning because none of them
-            are allowed to have LinkedIn profiles.
+          <GridListItem title="Професіоналізм" invert>
+            У нашій студії ми прагнемо до високих стандартів виконання.
+            Кожен тренер — це не лише майстер своєї справи, але й постійно розвивається як професіонал, який ділиться своїм досвідом з учнями.
           </GridListItem>
-          <GridListItem title="Trust" invert>
-            We don’t care when our team works just as long as they are working
-            every waking second.
+          <GridListItem title="Довіра" invert>
+            Довіра — це основа наших відносин у студії.
+            Ми створюємо атмосферу, де кожен відчуває підтримку і безпеку, де учні можуть відкритися та розвиватися без страху.
+            Ми віримо у важливість взаємної довіри між тренерами та танцюристами для досягнення максимальних результатів.
           </GridListItem>
-          <GridListItem title="Compassion" invert>
-            You never know what someone is going through at home and we make
-            sure to never find out.
+          <GridListItem title="Праця над собою" invert>
+            Танці — це не лише про рухи, а й про внутрішню трансформацію.
+            Ми підтримуємо кожного учня в прагненні працювати над собою, розвивати дисципліну та вдосконалювати не тільки технічні навички, але й внутрішній світ.
+            Кожен крок, кожне тренування — це інвестиція в себе.
           </GridListItem>
         </GridList>
       </Container>
@@ -61,7 +63,7 @@ const team = [
     title: 'Leadership',
     people: [
       {
-        name: 'Leslie Alexander',
+        name: 'Olesya Yatsevka',
         role: 'Co-Founder / CEO',
         image: { src: imageLeslieAlexander },
       },
@@ -178,8 +180,70 @@ function Team() {
   )
 }
 
+function AboutStudio() {
+  return (
+    <>
+      <PageIntro eyebrow="Напрямки танців у студії" title="Сучасність">
+        <p>
+          Танець – це мистецтво, яке доступне для кожної людини - ні вага, ні статус, ні вік
+          неважливі, важливе лише бажання та завзятість!
+        </p>
+        <div className="mt-10 max-w-2xl space-y-6 text-base">
+          <p className="mt-8 ">
+            Танцювальна студія Dance.Line.Studio пропонує різні напрямки хореографії:
+          </p>
+          <ul>
+            <li>сучасну - Contemporary/Modern та High Heels</li>
+            <li>латиноамериканську – Bachata, Salsa та Zumba</li>
+            <li>класичну – Balett та - Stretching</li>
+          </ul>
+          <p>
+            Якщо ви вагаєтесь і не можете визначитися з напрямком хореографії – наші викладачі будуть
+            неймовірно раді бачити у себе на разовому занятті нові обличчя.
+          </p>
+          <p>
+            Але! Пропонуємо ще більш цікавий варіант – відвідати майстер-класи нашої студії, які
+            відбуваються раз на місяць. Спробуйте! Вам неодмінно сподобається це дійство і ви відчуєте
+            свій танець. Оплата майстер-класів йде на доброчинність!
+          </p>
+          <p>
+            Якщо ж ви знаєте чого хочете – то варіант місячного абонементу саме для вас. Абонемент діє
+            протягом місяця (від дати до дати) і кількість занять від 8 до 12. Заняття проходять у
+            групах (10-12 чоловік) або індивідуально. Групові заняття є денні та вечірні. Індивідуальні
+            – час проведення узгоджується залежно від побажань клієнта.
+          </p>
+          <p>Також наші танцювальні групи різних вікових категорій - від 4 до 99 років.</p>
+          <p>
+            Окрім вікового критерію формування груп, ми орієнтуємося на рівень майстерності наших учнів.
+          </p>
+          <p>
+            Абсолютно неважливо на якому ви танцювальному рівні – танцюєте лише для свого задоволення
+            або ж палко бажаєте здобути переможні місця на змаганнях.
+          </p>
+          <p>
+            В прагненні навчитися чи вдосконалити своє вміння - вам допоможуть наші талановиті
+            хореографи.
+          </p>
+          <p>
+            Наші викладачі мають професійну хореографічну освіту та багаторічний стаж. Являються
+            учасниками місцевих та закордонних танцювальних конкурсів, майстер-класів. Але насамперед,
+            вони займаються своєю улюбленою справою і тим, що вміють найкраще.
+          </p>
+          <p>
+            Якщо вам необхідна танцювальна студія в Ужгороді, Dance.Line.Studio – саме те місце, де ви
+            не тільки навчитеся танцювати, але й просто відчуєте себе <b>щасливими!</b> Бо інколи ми забуваємо
+            як це! Танцюючи, людина по-справжньому щаслива, адже вона вміє висловлювати свої емоції і ділитися
+            ними з оточуючими.
+          </p>
+          <p>P.S. Не існує людей, які не вміють танцювати!!!</p>
+        </div>
+      </PageIntro>
+    </>
+  )
+}
+
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'Про студію',
   description:
     'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
 }
@@ -189,35 +253,32 @@ export default async function About() {
 
   return (
     <>
-      <PageIntro eyebrow="About us" title="Our strength is collaboration">
+      <PageIntro eyebrow="Про студію" title="Наша сильна сторона">
         <p>
-          We believe that our strength lies in our collaborative approach, which
-          puts our clients at the center of everything we do.
+          Ми віримо, що наша сила полягає в нашому професійному підході, який ставить наших учнів в центр всього, що ми робимо.
         </p>
         <div className="mt-10 max-w-2xl space-y-6 text-base">
-          <p>
-            Studio was started by three friends who noticed that developer
-            studios were charging clients double what an in-house team would
-            cost. Since the beginning, we have been committed to doing things
-            differently by charging triple instead.
+          <p className="mt-8 ">
+            Керівник студії, Олеся Яцевська — хореограф-викладач за освітою, професійна танцівниця.
+            Саме <b>професійний розвиток</b>, інтерес до нового та прагнення <b>ставати кращою</b> стали тим поштовхом, що привів її до відкриття студії в рідному місті.
+            І це не тільки про особистий розвиток.
           </p>
           <p>
-            At Studio, we’re more than just colleagues — we’re a family. This
-            means we pay very little and expect people to work late. We want our
-            employees to bring their whole selves to work. In return, we just
-            ask that they keep themselves there until at least 6:30pm.
+            Це про людей, людей-однодумців, що прагнуть займатися розвитком і підтримкою культури танцю в регіоні.
           </p>
         </div>
       </PageIntro>
       <Container className="mt-16">
         <StatList>
-          <StatListItem value="35" label="Underpaid employees" />
-          <StatListItem value="52" label="Placated clients" />
-          <StatListItem value="$25M" label="Invoices billed" />
+          <StatListItem value="9" label="Професійних викладачів" />
+          <StatListItem value="8" label="Hапрямків та стилів танцю для кожного!" />
+          <StatListItem value="2" label="Сучасних зали в центрі міста" />
         </StatList>
       </Container>
 
       <Culture />
+
+      <AboutStudio />
 
       <Team />
 

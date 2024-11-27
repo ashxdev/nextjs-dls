@@ -1,9 +1,10 @@
-import { ContactSection } from '@/app/components/ContactSection'
-import { Container } from '@/app/components/Container'
 import { FadeIn } from '@/app/components/FadeIn'
-import { MDXComponents } from '@/app/components/MDXComponents'
-import { PageLinks } from '@/app/components/PageLinks'
 import { formatDate } from '@/app/lib/formatDate'
+import { Container } from '@/app/components/Container'
+import { PageLinks } from '@/app/components/PageLinks'
+import { MDXComponents } from '@/app/components/MDXComponents'
+import { ContactSection } from '@/app/components/ContactSection'
+
 import { type Article, type MDXEntry, loadArticles } from '@/app/lib/mdx'
 
 export default async function BlogArticleWrapper({
@@ -32,14 +33,12 @@ export default async function BlogArticleWrapper({
             >
               {formatDate(article.date)}
             </time>
-            <p className="mt-6 text-sm font-semibold text-neutral-950">
-              by {article.author.name}, {article.author.role}
-            </p>
+
           </header>
         </FadeIn>
 
         <FadeIn>
-          <MDXComponents.wrapper className="mt-24 sm:mt-32 lg:mt-40">
+          <MDXComponents.wrapper className="mt-12 sm:mt-16 lg:mt-20">
             {children}
           </MDXComponents.wrapper>
         </FadeIn>

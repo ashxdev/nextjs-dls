@@ -13,9 +13,10 @@ const monaSans = localFont({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Studio',
-    default: 'Studio - Award winning developer studio based in Denmark',
+    template: '%s - Dance Line Studio',
+    default: 'Dance Line Studio — перша справді сучасна студія танців в Ужгороді',
   },
+  description: "Dance Line Studio — перша справді сучасна студія танців в Ужгороді. Танці для всіх: хіп-хоп, хай хілс, кей-поп, соціальні танці, бачата, контемпорарі. Розкрийте свій потенціал разом із нами!"
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

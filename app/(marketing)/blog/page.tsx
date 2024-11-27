@@ -12,9 +12,9 @@ import { formatDate } from '@/app/lib/formatDate'
 import { loadArticles } from '@/app/lib/mdx'
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Новини',
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
+    'Події, майстер класи Ужгород, Dance Line Studio',
 }
 
 export default async function Blog() {
@@ -22,10 +22,9 @@ export default async function Blog() {
 
   return (
     <>
-      <PageIntro eyebrow="Blog" title="The latest articles and news">
+      <PageIntro eyebrow="Блог" title="Останні новини і оголошення">
         <p>
-          Stay up-to-date with the latest industry news as our marketing teams
-          finds new ways to re-purpose old CSS tricks articles.
+          Тут ми ділимося новинами студії, інформацією про події та важливими оголошеннями.
         </p>
       </PageIntro>
 
@@ -51,16 +50,10 @@ export default async function Blog() {
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                             <Image
-                              alt=""
+                              alt={article.title}
                               {...article.author.image}
-                              className="h-12 w-12 object-cover grayscale"
+                              className="h-96 w-96 lg:h-48 lg:w-48 object-cover grayscale"
                             />
-                          </div>
-                          <div className="text-sm text-neutral-950">
-                            <div className="font-semibold">
-                              {article.author.name}
-                            </div>
-                            <div>{article.author.role}</div>
                           </div>
                         </dd>
                       </dl>

@@ -42,10 +42,11 @@ export interface CaseStudy {
   date: string
   client: string
   title: string
+  subTitle: string
   description: string
   summary: Array<string>
-  logo: ImageProps['src']
   image: ImagePropsWithOptionalAlt
+  video: { src: string }
   service: string
   testimonial: {
     author: {
@@ -61,5 +62,5 @@ export function loadArticles() {
 }
 
 export function loadCaseStudies() {
-  return loadEntries<CaseStudy>('work', 'caseStudy')
+  return loadEntries<CaseStudy>('styles', 'caseStudy')
 }

@@ -75,15 +75,13 @@ function Header({
             filled={logoHovered}
           />
           <Logo
-            className="hidden h-8 sm:block"
+            className="hidden h-10 sm:block text-left"
             invert={invert}
             filled={logoHovered}
           />
         </Link>
         <div className="flex items-center gap-x-8">
-          <Button href="/contact" invert={invert}>
-            Contact us
-          </Button>
+          <Button href="/contact" invert={invert}>Контакти</Button>
           <button
             ref={toggleRef}
             type="button"
@@ -143,12 +141,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/work">Our Work</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/schedule">Наш Розклад</NavigationItem>
+        <NavigationItem href="/blog">Блог</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
-        <NavigationItem href="/blog">Blog</NavigationItem>
+        <NavigationItem href="/about">Про нас</NavigationItem>
+        <NavigationItem href="https://dance-line.studio/login">Login</NavigationItem>
       </NavigationRow>
     </nav>
   )
@@ -233,7 +231,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div>
                     <h2 className="font-display text-base font-semibold text-white">
-                      Our offices
+                      Наша адреса
                     </h2>
                     <Offices
                       invert
@@ -242,7 +240,7 @@ function RootLayoutInner({ children }: { children: React.ReactNode }) {
                   </div>
                   <div className="sm:border-l sm:border-transparent sm:pl-16">
                     <h2 className="font-display text-base font-semibold text-white">
-                      Follow us
+                      Ми в соціальних мережах
                     </h2>
                     <SocialMedia className="mt-6" invert />
                   </div>

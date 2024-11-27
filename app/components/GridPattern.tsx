@@ -82,9 +82,38 @@ export function GridPattern({
       })
     }
 
+    function randomAnimateBlock() {
+      if (!ref.current) {
+        return
+      }
+
+      const rect = ref.current.getBoundingClientRect()
+      let x = Math.floor(Math.random() * rect.width)
+      let y = Math.floor(Math.random() * rect.height)
+      if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
+        return
+      }
+
+      x = x - rect.width / 2 - 32
+      y = y - yOffset
+      x += Math.tan(32 / 160) * y
+      x = Math.floor(x / 96)
+      y = Math.floor(y / 160)
+
+      setHoveredBlocks((blocks) => {
+        const key = counter.current++
+        const block = [x, y, key] as (typeof hoveredBlocks)[number]
+        return [...blocks, block].filter(
+          (block) => !(block[0] === x && block[1] === y && block[2] !== key),
+        )
+      })
+    }
+
+    const intervalId = setInterval(randomAnimateBlock, 100)
     window.addEventListener('mousemove', onMouseMove)
 
     return () => {
+      clearInterval(intervalId)
       window.removeEventListener('mousemove', onMouseMove)
     }
   }, [yOffset, interactive])

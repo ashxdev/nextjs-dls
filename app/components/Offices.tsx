@@ -32,17 +32,12 @@ export function Offices({
   return (
     <ul role="list" {...props}>
       <li>
-        <Office name="Copenhagen" invert={invert}>
-          1 Carlsberg Gate
+        <Office name="Ужгород" invert={invert}>
+          вул. Фединця 25a, 3 поверх
           <br />
-          1260, København, Denmark
-        </Office>
-      </li>
-      <li>
-        <Office name="Billund" invert={invert}>
-          24 Lego Allé
+          88000, Закарпатська область, Україна
           <br />
-          7190, Billund, Denmark
+          тел.: +38 095 086 9104
         </Office>
       </li>
     </ul>

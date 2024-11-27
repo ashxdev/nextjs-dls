@@ -9,10 +9,12 @@ export function Testimonial({
   children,
   client,
   className,
+  caption
 }: {
   children: React.ReactNode
-  client: { logo: ImageProps['src']; name: string }
-  className?: string
+  client?: { logo: ImageProps['src']; name: string }
+  className?: string,
+  caption?: string
 }) {
   return (
     <div
@@ -34,7 +36,8 @@ export function Testimonial({
               </p>
             </blockquote>
             <figcaption className="mt-10">
-              <Image src={client.logo} alt={client.name} unoptimized />
+              {client && <Image src={client.logo} alt={client.name} unoptimized />}
+              {caption}
             </figcaption>
           </figure>
         </FadeIn>

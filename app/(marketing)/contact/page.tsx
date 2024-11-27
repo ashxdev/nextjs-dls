@@ -1,4 +1,3 @@
-import { useId } from 'react'
 import { type Metadata } from 'next'
 import Link from 'next/link'
 
@@ -10,85 +9,23 @@ import { Offices } from '@/app/components/Offices'
 import { PageIntro } from '@/app/components/PageIntro'
 import { SocialMedia } from '@/app/components/SocialMedia'
 
-function TextInput({
-  label,
-  ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  let id = useId()
-
-  return (
-    <div className="group relative z-0 transition-all focus-within:z-10">
-      <input
-        type="text"
-        id={id}
-        {...props}
-        placeholder=" "
-        className="peer block w-full border border-neutral-300 bg-transparent px-6 pb-4 pt-12 text-base/6 text-neutral-950 ring-4 ring-transparent transition focus:border-neutral-950 focus:outline-none focus:ring-neutral-950/5 group-first:rounded-t-2xl group-last:rounded-b-2xl"
-      />
-      <label
-        htmlFor={id}
-        className="pointer-events-none absolute left-6 top-1/2 -mt-3 origin-left text-base/6 text-neutral-500 transition-all duration-200 peer-focus:-translate-y-4 peer-focus:scale-75 peer-focus:font-semibold peer-focus:text-neutral-950 peer-[:not(:placeholder-shown)]:-translate-y-4 peer-[:not(:placeholder-shown)]:scale-75 peer-[:not(:placeholder-shown)]:font-semibold peer-[:not(:placeholder-shown)]:text-neutral-950"
-      >
-        {label}
-      </label>
-    </div>
-  )
-}
-
-function RadioInput({
-  label,
-  ...props
-}: React.ComponentPropsWithoutRef<'input'> & { label: string }) {
-  return (
-    <label className="flex gap-x-3">
-      <input
-        type="radio"
-        {...props}
-        className="h-6 w-6 flex-none appearance-none rounded-full border border-neutral-950/20 outline-none checked:border-[0.5rem] checked:border-neutral-950 focus-visible:ring-1 focus-visible:ring-neutral-950 focus-visible:ring-offset-2"
-      />
-      <span className="text-base/6 text-neutral-950">{label}</span>
-    </label>
-  )
-}
-
 function ContactForm() {
   return (
     <FadeIn className="lg:order-last">
-      <form>
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Work inquiries
-        </h2>
-        <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
-          <TextInput label="Name" name="name" autoComplete="name" />
-          <TextInput
-            label="Email"
-            type="email"
-            name="email"
-            autoComplete="email"
-          />
-          <TextInput
-            label="Company"
-            name="company"
-            autoComplete="organization"
-          />
-          <TextInput label="Phone" type="tel" name="phone" autoComplete="tel" />
-          <TextInput label="Message" name="message" />
-          <div className="border border-neutral-300 px-6 py-8 first:rounded-t-2xl last:rounded-b-2xl">
-            <fieldset>
-              <legend className="text-base/6 text-neutral-500">Budget</legend>
-              <div className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2">
-                <RadioInput label="$25K – $50K" name="budget" value="25" />
-                <RadioInput label="$50K – $100K" name="budget" value="50" />
-                <RadioInput label="$100K – $150K" name="budget" value="100" />
-                <RadioInput label="More than $150K" name="budget" value="150" />
-              </div>
-            </fieldset>
-          </div>
-        </div>
-        <Button type="submit" className="mt-10">
-          Let’s work together
-        </Button>
-      </form>
+
+      <h2 className="font-display text-base font-semibold text-neutral-950">
+        На карті
+      </h2>
+      <div className="isolate mt-6 -space-y-px rounded-2xl bg-white/50">
+        <iframe
+          title="вулиця Фединця 25a, Ужгород, Закарпатська область, Україна"
+          className="h-96 w-96"
+          src="https://www.google.com/maps/embed/v1/place?q=⁨Dance+Line+Studio⁩,+вулиця+Фединця,+25,+Ужгород,+Zakarpattia+Oblast,+Ukraine&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+        />
+      </div>
+      <Button href="tel:+38 095 086 9104" className="mt-10">
+        Зателефонувати
+      </Button>
     </FadeIn>
   )
 }
@@ -97,42 +34,18 @@ function ContactDetails() {
   return (
     <FadeIn>
       <h2 className="font-display text-base font-semibold text-neutral-950">
-        Our offices
+        Як нас знайти
       </h2>
       <p className="mt-6 text-base text-neutral-600">
-        Prefer doing things in person? We don’t but we have to list our
-        addresses here for legal reasons.
+        Ми знаходимося в центрі міста Ужгород, <span className="font-semibold">вул. Фединця 25а, 3 поверх</span>
       </p>
+      <p className="font-bold">тел.: 095 086 9104</p>
 
       <Offices className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2" />
 
       <Border className="mt-16 pt-16">
         <h2 className="font-display text-base font-semibold text-neutral-950">
-          Email us
-        </h2>
-        <dl className="mt-6 grid grid-cols-1 gap-8 text-sm sm:grid-cols-2">
-          {[
-            ['Careers', 'careers@studioagency.com'],
-            ['Press', 'press@studioagency.com'],
-          ].map(([label, email]) => (
-            <div key={email}>
-              <dt className="font-semibold text-neutral-950">{label}</dt>
-              <dd>
-                <Link
-                  href={`mailto:${email}`}
-                  className="text-neutral-600 hover:text-neutral-950"
-                >
-                  {email}
-                </Link>
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </Border>
-
-      <Border className="mt-16 pt-16">
-        <h2 className="font-display text-base font-semibold text-neutral-950">
-          Follow us
+          Наші соціальні мережі
         </h2>
         <SocialMedia className="mt-6" />
       </Border>
@@ -141,15 +54,15 @@ function ContactDetails() {
 }
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Let’s work together. We can’t wait to hear from you.',
+  title: 'Контакти',
+  description: 'Дізнайтеся, як нас знайти, та отримайте інформацію про наші послуги та розклад занять.',
 }
 
 export default function Contact() {
   return (
     <>
-      <PageIntro eyebrow="Contact us" title="Let’s work together">
-        <p>We can’t wait to hear from you.</p>
+      <PageIntro eyebrow="Контакти" title="Ми завжди на зв'язку">
+        <p>Ми з нетерпінням чекаємо на тебе!</p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
