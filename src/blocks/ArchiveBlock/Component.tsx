@@ -3,9 +3,9 @@ import type { Post, ArchiveBlock as ArchiveBlockProps } from '@/payload-types'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
-import RichText from '@/components/RichText'
+import RichText from '@/components/marketing/RichText'
 
-import { CollectionArchive } from '@/components/CollectionArchive'
+import { CollectionArchive } from '@/components/marketing/CollectionArchive'
 
 export const ArchiveBlock: React.FC<
   ArchiveBlockProps & {
@@ -32,12 +32,12 @@ export const ArchiveBlock: React.FC<
       limit,
       ...(flattenedCategories && flattenedCategories.length > 0
         ? {
-            where: {
-              categories: {
-                in: flattenedCategories,
-              },
+          where: {
+            categories: {
+              in: flattenedCategories,
             },
-          }
+          },
+        }
         : {}),
     })
 

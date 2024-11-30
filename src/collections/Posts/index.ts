@@ -164,6 +164,8 @@ export const Posts: CollectionConfig<'posts'> = {
     {
       name: 'publishedAt',
       type: 'date',
+      defaultValue: new Date(),
+      required: true,
       admin: {
         date: {
           pickerAppearance: 'dayAndTime',
@@ -223,7 +225,7 @@ export const Posts: CollectionConfig<'posts'> = {
   versions: {
     drafts: {
       autosave: {
-        interval: 100, // We set this interval for optimal live preview
+        interval: 3000, // We set this interval for optimal live preview
       },
     },
     maxPerDoc: 50,

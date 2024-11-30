@@ -17,8 +17,8 @@ export const generateMeta = async (args: {
     `${getServerSideURL()}`
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Payload Website Template'
-    : 'Payload Website Template'
+    ? doc?.meta?.title + ' | Dance Line Studio'
+    : 'Dance Line Studio'
 
   return {
     description: doc?.meta?.description,
@@ -26,10 +26,10 @@ export const generateMeta = async (args: {
       description: doc?.meta?.description || '',
       images: ogImage
         ? [
-            {
-              url: ogImage,
-            },
-          ]
+          {
+            url: ogImage,
+          },
+        ]
         : undefined,
       title,
       url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
