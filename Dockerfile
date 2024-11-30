@@ -1,24 +1,21 @@
-FROM node:23.3.0-alpine as base
+FROM node:23.3.0-slim as base
 
-FROM base as builder
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
 
-WORKDIR /home/node/app
-COPY package*.json ./
+FROM base AS prod
 
-COPY . .
-RUN yarn install
-RUN yarn build
+COPY pnpm-lock.yaml /app
+WORKDIR /app
+RUN pnpm fetch --prod
 
-FROM base as runtime
+COPY . /app
+RUN pnpm run build
 
-ENV NODE_ENV=production
-
-WORKDIR /home/node/app
-COPY package*.json  ./
-COPY yarn.lock ./
-
-RUN yarn install --production
+FROM base
+COPY --from=prod /app/node_modules /app/node_modules
+COPY --from=prod /app/dist /app/dist
 
 EXPOSE 3000
-
 CMD ["node", "dist/server.js"]
