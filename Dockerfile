@@ -1,24 +1,21 @@
-FROM node:23.3.0-alpine as base
+FROM node:20 AS base
+WORKDIR /app
+RUN npm i -g pnpm
+COPY package.json pnpm-lock.yaml ./
 
-FROM base as builder
-
-WORKDIR /home/node/app
-COPY package*.json ./
+RUN pnpm install
 
 COPY . .
-RUN yarn install
-RUN yarn build
+RUN pnpm build
 
-FROM base as runtime
+FROM node:20-alpine3.19 as release
+WORKDIR /app
+RUN npm i -g pnpm
 
-ENV NODE_ENV=production
-
-WORKDIR /home/node/app
-COPY package*.json  ./
-COPY yarn.lock ./
-
-RUN yarn install --production
+COPY --from=base /app/node_modules ./node_modules
+COPY --from=base /app/package.json ./package.json
+COPY --from=base /app/.next ./.next
 
 EXPOSE 3000
 
-CMD ["node", "dist/server.js"]
+CMD ["pnpm", "start"]
