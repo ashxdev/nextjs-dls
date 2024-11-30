@@ -1,21 +1,30 @@
-FROM node:20-slim AS base
+FROM node:23.3.0-slim as base
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-RUN corepack enable
+# Install pnpm globally in the base stage
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
-FROM base AS prod
+FROM base as builder
 
-COPY pnpm-lock.yaml /app
-WORKDIR /app
-RUN pnpm fetch --prod
+WORKDIR /home/node/app
+COPY package*.json pnpm-lock.yaml ./
 
-COPY . /app
+# Install dependencies and build the project
+RUN pnpm install
+COPY . .
 RUN pnpm run build
 
-FROM base
-COPY --from=prod /app/node_modules /app/node_modules
-COPY --from=prod /app/dist /app/dist
+FROM base as runtime
+
+ENV NODE_ENV=production
+
+WORKDIR /home/node/app
+COPY package*.json pnpm-lock.yaml ./
+
+# Install production dependencies only
+RUN pnpm install --prod
+
+COPY --from=builder /home/node/app/dist ./dist
 
 EXPOSE 3000
+
 CMD ["node", "dist/server.js"]
