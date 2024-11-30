@@ -2,25 +2,30 @@ version: '3'
 
 services:
   payload:
-    image: node:23.3.0-alpine3.19
-    container_name: payload
-    environment:
-      - DATABASE_URL=sqlite:/app/payload-dls.db
+    image: node:18-alpine
     ports:
-      - "3000:3000"
+      - '3000:3000'
     volumes:
-      - /home/ashxdev/projects/dls:/app
-    working_dir: /app
-    command: >
-      sh -c "
-        npm install -g pnpm &&
-        pnpm install &&
-        pnpm build &&
-        pnpm start
-      "
-    networks:
-      - payload_network
+      - .:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    working_dir: /home/node/app/
+    command: sh -c "yarn install && yarn dev"
+    depends_on:
+      - mongo
+    env_file:
+      - .env
 
-networks:
-  payload_network:
-    driver: bridge
+  mongo:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    command:
+      - --storageEngine=wiredTiger
+    volumes:
+      - data:/data/db
+    logging:
+      driver: none
+
+volumes:
+  data:
+  node_modules:
