@@ -1,17 +1,16 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import type { Event, Media } from '@payload-types'
 
+import Link from 'next/link'
+import Image from 'next/image'
+import configPromise from '@payload-config'
 import { Border } from '@/components/Border'
 import { Button } from '@/components/Button'
-import { ContactSection } from '@/components/ContactSection'
-import { Container } from '@/components/Container'
 import { FadeIn } from '@/components/FadeIn'
-import { PageIntro } from '@/components/PageIntro'
 import { formatDate } from 'src/lib/formatDate'
-import configPromise from '@payload-config'
-import type { Post, Media } from '@payload-types'
-
+import { Container } from '@/components/Container'
+import { PageIntro } from '@/components/PageIntro'
+import { ContactSection } from '@/components/ContactSection'
 
 import { getPayload } from 'payload'
 
@@ -22,20 +21,20 @@ type Meta = {
     description?: string | null
   }
 }
-type PostI = Omit<Post, "meta"> & Meta
+type EventI = Omit<Event, "meta"> & Meta
 
 
 export const metadata: Metadata = {
-  title: 'Блог',
+  title: 'Наші події, майстер класи',
   description:
-    'Новини, життя, статті -  Dance Line Studio',
+    'Події, майстер класи Ужгород - Dance Line Studio',
 }
 
-export default async function Blog() {
+export default async function Events() {
   const payload = await getPayload({ config: configPromise })
 
-  const posts = await payload.find({
-    collection: 'posts',
+  const events = await payload.find({
+    collection: 'events',
     depth: 1,
     limit: 12,
     overrideAccess: false,
@@ -51,22 +50,22 @@ export default async function Blog() {
 
   return (
     <>
-      <PageIntro eyebrow="Блог" title="Останні новини і статті">
+      <PageIntro eyebrow="Події" title="Події і оголошення">
         <p>
-          Тут ми ділимося новинами студії, досягненнями та цікавими статтями.
+          Тут ми ділимося найближчими подіями та майстер класами.
         </p>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <div className="space-y-24 lg:space-y-32">
-          {posts.docs.map((article: PostI) => (
+          {events.docs.map((article: EventI) => (
             <FadeIn key={article.slug}>
               <article>
                 <Border className="pt-16">
                   <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                     <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                       <h2 className="font-display text-2xl font-semibold text-neutral-950">
-                        <Link href={`/blog/${article.slug}`}>{article.title}</Link>
+                        <Link href={`/events/${article.slug}`}>{article.title}</Link>
                       </h2>
                       <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                         <dt className="sr-only">Published</dt>
@@ -92,7 +91,7 @@ export default async function Blog() {
                         {article.meta?.description}
                       </p>
                       <Button
-                        href={`/blog/${article.slug}`}
+                        href={`/events/${article.slug}`}
                         aria-label={`Read more: ${article.title}`}
                         className="mt-8"
                       >

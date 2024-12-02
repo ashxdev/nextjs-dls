@@ -141,12 +141,12 @@ function Navigation() {
   return (
     <nav className="mt-px font-display text-5xl font-medium tracking-tight text-white">
       <NavigationRow>
-        <NavigationItem href="/schedule">Наш Розклад</NavigationItem>
-        <NavigationItem href="/blog">Блог</NavigationItem>
+        <NavigationItem href="/schedule">Розклад</NavigationItem>
+        <NavigationItem href="/events">Події</NavigationItem>
       </NavigationRow>
       <NavigationRow>
         <NavigationItem href="/about">Про нас</NavigationItem>
-        <NavigationItem href="https://dance-line.studio/login">Login</NavigationItem>
+        <NavigationItem href="/blog">Блог</NavigationItem>
       </NavigationRow>
     </nav>
   )
