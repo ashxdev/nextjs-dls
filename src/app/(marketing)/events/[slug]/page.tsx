@@ -7,7 +7,7 @@ import configPromise from '@payload-config'
 import { draftMode } from 'next/headers'
 import RichText from '@/components/marketing/RichText'
 import { generateMeta } from '@/utilities/generateMeta'
-import { Relatedevents } from '@/blocks/Relatedevents/Component'
+import { RelatedPosts } from '@/blocks/RelatedPosts/Component'
 import { PayloadRedirects } from '@/components/marketing/PayloadRedirects'
 
 import { FadeIn } from '@/components/FadeIn'
@@ -83,7 +83,7 @@ export default async function Event({ params: paramsPromise }: Args) {
             <div className="container">
               <RichText className="max-w-[48rem] mx-auto" content={event.content} enableGutter={false} />
               {event.relatedEvents && event.relatedEvents.length > 0 && (
-                <Relatedevents
+                <RelatedPosts
                   className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
                   docs={event.relatedEvents.filter((event) => typeof event === 'object')}
                 />
