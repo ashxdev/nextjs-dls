@@ -75,9 +75,6 @@ export default async function Event({ params: paramsPromise }: Args) {
           </header>
         </FadeIn>
 
-
-
-
         <FadeIn>
           <div className="mt-12 sm:mt-16 lg:mt-20">
             <div className="container">
