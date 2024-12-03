@@ -14,7 +14,7 @@ export const generateMeta = async (args: {
     typeof doc?.meta?.image === 'object' &&
     doc.meta.image !== null &&
     'url' in doc.meta.image &&
-    `${getServerSideURL()}`
+    `${getServerSideURL()}${doc.meta.image.url}`
 
   const title = doc?.meta?.title
     ? doc?.meta?.title + ' | Dance Line Studio'

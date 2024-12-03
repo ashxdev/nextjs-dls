@@ -3,7 +3,7 @@ import { getServerSideURL } from './getURL'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'An open-source website built with Payload and Next.js.',
+  description: 'Dance Line Studio — перша справді сучасна студія танців в Ужгороді.',
   images: [
     {
       url: `${getServerSideURL()}/website-template-OG.webp`,
