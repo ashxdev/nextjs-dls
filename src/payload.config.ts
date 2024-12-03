@@ -29,7 +29,6 @@ export default buildConfig({
       beforeLogin: ['@/components/marketing/BeforeLogin'],
       // The `BeforeDashboard` component renders the 'welcome' block that you see after logging into your admin panel.
       // Feel free to delete this at any time. Simply remove the line below and the import `BeforeDashboard` statement on line 15.
-      beforeDashboard: ['@/components/marketing/BeforeDashboard'],
     },
     importMap: {
       baseDir: path.resolve(dirname),
@@ -63,7 +62,7 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
   }),
-  collections: [Pages, Posts, Media, Categories, Users, Events],
+  collections: [Events, Posts, Media, Categories, Pages, Users],
   cors: [getServerSideURL()].filter(Boolean),
   globals: [Header, Footer],
   plugins: [
