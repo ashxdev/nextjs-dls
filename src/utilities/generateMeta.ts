@@ -14,7 +14,7 @@ export const generateMeta = async (args: {
     typeof doc?.meta?.image === 'object' &&
     doc.meta.image !== null &&
     'url' in doc.meta.image &&
-    `https://dance-line.studio/${doc.meta.image.url}`
+    `https://dance-line.studio${doc.meta.image.url}`
 
   const title = doc?.meta?.title
     ? doc?.meta?.title + ' | Dance Line Studio'
