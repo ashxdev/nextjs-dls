@@ -24,7 +24,6 @@ type Meta = {
 }
 type PostI = Omit<Post, "meta"> & Meta
 
-
 export const metadata: Metadata = {
   title: 'Блог',
   description:

@@ -1,7 +1,8 @@
-import Link from 'next/link'
 import { type Metadata } from 'next'
 import { Button } from '@/components/Button'
 
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 import { ContactSection } from '@/components/ContactSection'
 import { Container } from '@/components/Container'
 import { FadeIn, FadeInStagger } from '@/components/FadeIn'
@@ -18,9 +19,17 @@ import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/olesya.jpg'
 import { Video } from '@/components/Video'
+import { PageLinks } from '@/components/PageLinks'
 import SnowAnimation from '@/components/SnowAnimation'
 
 import Styles from '@/app/(marketing)/styles/_styles'
+
+interface Page {
+  href: string
+  date: string
+  title: string
+  description: string
+}
 
 
 const clients = [
@@ -158,6 +167,41 @@ function Services() {
   )
 }
 
+
+async function LatestEvents() {
+  const payload = await getPayload({ config: configPromise })
+
+  const events = await payload.find({
+    collection: 'events',
+    depth: 1,
+    limit: 2,
+    overrideAccess: false,
+    select: {
+      title: true,
+      slug: true,
+      categories: true,
+      meta: true,
+      seo: true,
+      publishedAt: true
+    },
+  })
+  const eventPages = events.docs.map(item => ({
+    date: item.publishedAt,
+    title: item.title,
+    description: item.meta?.description,
+    href: `/events/${item.slug}`,
+
+  })) as Page[]
+  return (
+    <PageLinks
+      className="mt-24 sm:mt-32 lg:mt-40"
+      title="Події"
+      intro="Останні події і новини студії"
+      pages={eventPages}
+    />
+  )
+}
+
 export const metadata: Metadata = {
   description:
     'Dance Line Studio — перша справді сучасна студія танців в Ужгороді.',
@@ -194,6 +238,8 @@ export default async function Home() {
       </Testimonial>
 
       <Services />
+
+      <LatestEvents />
 
       <ContactSection />
     </>

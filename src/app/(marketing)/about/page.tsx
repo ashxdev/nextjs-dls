@@ -1,5 +1,7 @@
 import { type Metadata } from 'next'
 import Image from 'next/image'
+import { getPayload } from 'payload'
+import configPromise from '@payload-config'
 
 import { Border } from '@/components/Border'
 import { ContactSection } from '@/components/ContactSection'
@@ -22,6 +24,13 @@ import imageLeonardKrasner from '@/images/team/leonard-krasner.jpg'
 import imageLeslieAlexander from '@/images/team/leslie-alexander.jpg'
 import imageMichaelFoster from '@/images/team/michael-foster.jpg'
 import imageWhitneyFrancis from '@/images/team/whitney-francis.jpg'
+
+interface Page {
+  href: string
+  date: string
+  title: string
+  description: string
+}
 
 function Culture() {
   return (
@@ -181,8 +190,8 @@ function Team() {
 
 function AboutStudio() {
   return (
-    <>
-      <PageIntro eyebrow="Напрямки танців у студії" title="Сучасність">
+    <PageIntro eyebrow="Напрямки танців у студії" title="Сучасність">
+      <div className="typography">
         <p>
           Танець – це мистецтво, яке доступне для кожної людини - ні вага, ні статус, ні вік
           неважливі, важливе лише бажання та завзятість!
@@ -192,18 +201,13 @@ function AboutStudio() {
             Танцювальна студія Dance.Line.Studio пропонує різні напрямки хореографії:
           </p>
           <ul>
-            <li>сучасну - Contemporary/Modern та High Heels</li>
-            <li>латиноамериканську – Bachata, Salsa та Zumba</li>
+            <li>сучасну - Contemporary/Modern, Choreography, High Heels, K-pop, Hip-Hop</li>
+            <li>латиноамериканську – Bachata Lady Style, Bachata Couple</li>
             <li>класичну – Balett та - Stretching</li>
           </ul>
           <p>
             Якщо ви вагаєтесь і не можете визначитися з напрямком хореографії – наші викладачі будуть
             неймовірно раді бачити у себе на разовому занятті нові обличчя.
-          </p>
-          <p>
-            Але! Пропонуємо ще більш цікавий варіант – відвідати майстер-класи нашої студії, які
-            відбуваються раз на місяць. Спробуйте! Вам неодмінно сподобається це дійство і ви відчуєте
-            свій танець. Оплата майстер-класів йде на доброчинність!
           </p>
           <p>
             Якщо ж ви знаєте чого хочете – то варіант місячного абонементу саме для вас. Абонемент діє
@@ -229,26 +233,48 @@ function AboutStudio() {
             вони займаються своєю улюбленою справою і тим, що вміють найкраще.
           </p>
           <p>
-            Якщо вам необхідна танцювальна студія в Ужгороді, Dance.Line.Studio – саме те місце, де ви
+            Якщо вам необхідна танцювальна студія в Ужгороді, <b>Dance Line Studio</b> – саме те місце, де ви
             не тільки навчитеся танцювати, але й просто відчуєте себе <b>щасливими!</b> Бо інколи ми забуваємо
             як це! Танцюючи, людина по-справжньому щаслива, адже вона вміє висловлювати свої емоції і ділитися
             ними з оточуючими.
           </p>
           <p>P.S. Не існує людей, які не вміють танцювати!!!</p>
         </div>
-      </PageIntro>
-    </>
+      </div>
+    </PageIntro>
   )
 }
 
 export const metadata: Metadata = {
   title: 'Про студію',
   description:
-    'We believe that our strength lies in our collaborative approach, which puts our clients at the center of everything we do.',
+    'Про студію - Dance Line Studio',
 }
 
 export default async function About() {
-  let blogArticles = []
+  const payload = await getPayload({ config: configPromise })
+
+  const events = await payload.find({
+    collection: 'events',
+    depth: 1,
+    limit: 2,
+    overrideAccess: false,
+    select: {
+      title: true,
+      slug: true,
+      categories: true,
+      meta: true,
+      seo: true,
+      publishedAt: true
+    },
+  })
+  const eventPages = events.docs.map(item => ({
+    date: item.publishedAt,
+    title: item.title,
+    description: item.meta?.description,
+    href: `/events/${item.slug}`,
+
+  })) as Page[]
 
   return (
     <>
@@ -279,13 +305,11 @@ export default async function About() {
 
       <AboutStudio />
 
-      <Team />
-
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
-        title="From the blog"
-        intro="Our team of experienced designers and developers has just one thing on their mind; working on your ideas to draw a smile on the face of your users worldwide. From conducting Brand Sprints to UX Design."
-        pages={blogArticles}
+        title="Події"
+        intro="Останні події і новини студії"
+        pages={eventPages}
       />
 
       <ContactSection />
