@@ -13,8 +13,9 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
     const path = `/events/${doc.slug}`
 
     payload.logger.info(`Revalidating event at path: ${path}`)
-
     revalidatePath(path)
+
+    payload.logger.info(`Revalidating event at path: /events`)
     revalidatePath('/events/')
   }
 
@@ -23,8 +24,9 @@ export const revalidateEvent: CollectionAfterChangeHook<Event> = ({
     const oldPath = `/events/${previousDoc.slug}`
 
     payload.logger.info(`Revalidating old event at path: ${oldPath}`)
-
     revalidatePath(oldPath)
+
+    payload.logger.info(`Revalidating event at path: /events`)
     revalidatePath('/events/')
   }
 
