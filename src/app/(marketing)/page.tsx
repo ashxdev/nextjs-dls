@@ -18,6 +18,7 @@ import logoPhobiaLight from '@/images/clients/phobia/logo-light.svg'
 import logoUnseal from '@/images/clients/unseal/logo-light.svg'
 import imageLaptop from '@/images/olesya.jpg'
 import { Video } from '@/components/Video'
+import SnowAnimation from '@/components/SnowAnimation'
 
 import Styles from '@/app/(marketing)/styles/_styles'
 
@@ -37,6 +38,7 @@ function Clients() {
   return (
     <div className="mt-24 rounded-4xl bg-neutral-950 py-20 sm:mt-32 sm:py-32 lg:mt-56">
       <Container>
+        <SnowAnimation />
         <FadeIn className="flex items-center gap-x-8">
           <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
             В студії представленні сучасні і класичні напрямки хореографії як для дітей так і для дорослих
@@ -138,7 +140,7 @@ function Services() {
           <List className="mt-16 lg:mt-0 lg:w-1/2 lg:min-w-[33rem] lg:pl-4">
             <ListItem title="Професійні викладачі">
               У Dance Line Studio викладають найкращі викладачі з усієї України.
-              Кожен із них — справжній професіонал своєї справи, який постійно вдосконалює свої навички..
+              Кожен із них — справжній професіонал своєї справи, який постійно вдосконалює свої навички.
             </ListItem>
             <ListItem title="Велика сцена">
               Наші учні регулярно беруть участь у конкурсах, фестивалях та батлах як в Україні, так і за кордоном, здобуваючи призові місця.

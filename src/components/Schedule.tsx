@@ -40,10 +40,10 @@ export default function Schedule({ timeSlots, title }: { timeSlots: TimeSlots, t
 
                 <div className="flex bg-gray-200 text-xs/6 text-gray-700 lg:flex-auto">
                     <div className="hidden w-full lg:grid lg:grid-cols-6 lg:grid-rows-6 lg:gap-px">
-                        {timeSlots.map(timeSlot => {
+                        {timeSlots.map((timeSlot, index) => {
                             return <>
                                 <div
-                                    key={timeSlot.index}
+                                    key={timeSlot.index + index}
                                     className="bg-white relative px-0 py-0 md:px-3 md:py-2 text-gray-500 h-14"
                                 >
                                     {timeSlot.time}
