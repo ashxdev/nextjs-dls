@@ -78,7 +78,7 @@ export default async function Event({ params: paramsPromise }: Args) {
         <FadeIn>
           <div className="mt-12 sm:mt-16 lg:mt-20">
             <div className="container">
-              <RichText className="max-w-[48rem] mx-auto" content={event.content} enableGutter={false} />
+              <RichText className="max-w-[48rem] mx-auto typography" content={event.content} enableGutter={false} />
               {event.relatedEvents && event.relatedEvents.length > 0 && (
                 <RelatedPosts
                   className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
