@@ -78,13 +78,15 @@ export default async function Blog() {
                         <dt className="sr-only">Author</dt>
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
-                            <Image
-                              alt={article.title}
-                              width={600}
-                              height={600}
-                              src={article.meta?.image?.thumbnailURL as string}
-                              className="h-96 w-96 lg:h-48 lg:w-48 object-cover grayscale"
-                            />
+                            <Link href={`/blog/${article.slug}`}>
+                              <Image
+                                alt={article.title}
+                                width={600}
+                                height={600}
+                                src={article.meta?.image?.thumbnailURL as string}
+                                className="h-96 w-96 lg:h-48 lg:w-48 object-cover grayscale"
+                              />
+                            </Link>
                           </div>
                         </dd>
                       </dl>
