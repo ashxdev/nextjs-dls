@@ -204,7 +204,7 @@ async function LatestEvents() {
 
 export const metadata: Metadata = {
   description:
-    'Dance Line Studio — перша справді сучасна студія танців в Ужгороді.',
+    'Dance Line Studio — студія танцю для дорослих та дітей в місті Ужгород, танці Ужгород, Hip hop, Contemporary, Bachata Lady Style, High Heels, Body Ballet, K-pop, Bachata, Choreography',
 }
 
 export default async function Home() {

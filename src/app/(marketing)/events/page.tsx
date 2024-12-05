@@ -27,7 +27,7 @@ type EventI = Omit<Event, "meta"> & Meta
 export const metadata: Metadata = {
   title: 'Наші події, майстер класи',
   description:
-    'Події, майстер класи Ужгород - Dance Line Studio',
+    'Події, майстер класи Ужгород - Dance Line Studio: перша справді сучасна студія танців в Ужгороді. Танці для всіх: хіп-хоп, хай хілс, кей-поп, соціальні танці, бачата, контемпорарі. Розкрийте свій потенціал разом із нами!',
 }
 
 export default async function Events() {

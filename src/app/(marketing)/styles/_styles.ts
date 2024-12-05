@@ -2,7 +2,7 @@ const BachataCouple = {
     title: 'Bachata (парна)',
     subTitle: 'Дорослі групи',
     description:
-        'Вуличний танцювальний стиль, який в основному супроводжується хіп-хоп музикою і музикою, яка розвивалася як частина гіп-гоп культури',
+        'Музичний стиль і парний танець домініканського походження. Бачата -  це неповторний, романтичний і повний почуттів латиноамериканський танець',
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
@@ -165,5 +165,5 @@ const Choreography = {
     },
 }
 
-const Styles = [BachataCouple, BachataLadyStyle, BodyBallet, Сontemporary, HighHeels, HipHop, KPop, Waacking, Choreography]
+const Styles = [HipHop, HighHeels, BachataLadyStyle, BodyBallet, Сontemporary, BachataCouple, Waacking, KPop, Choreography]
 export default Styles

@@ -27,7 +27,7 @@ type PostI = Omit<Post, "meta"> & Meta
 export const metadata: Metadata = {
   title: 'Блог',
   description:
-    'Новини, життя, статті -  Dance Line Studio',
+    'Новини, життя, статті -  Dance Line Studio: студія танцю для дорослих та дітей в місті Ужгород, танці Ужгород, Hip hop, Contemporary, Bachata Lady Style, High Heels, Body Ballet, K-pop, Bachata, Choreography',
 }
 
 export default async function Blog() {

@@ -248,7 +248,7 @@ function AboutStudio() {
 export const metadata: Metadata = {
   title: 'Про студію',
   description:
-    'Про студію - Dance Line Studio',
+    'Dance Line Studio — студія танцю для дорослих та дітей в місті Ужгород, танці Ужгород, Hip hop, Contemporary, Bachata Lady Style, High Heels, Body Ballet, K-pop, Bachata, Choreography',
 }
 
 export default async function About() {
