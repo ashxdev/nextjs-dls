@@ -76,7 +76,7 @@ export default async function Blog() {
                         </dd>
                         <dt className="sr-only">Author</dt>
                         <dd className="mt-6 flex gap-x-4">
-                          <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
+                          <div className="overflow-hidden rounded-xl bg-neutral-100">
                             <Link href={`/blog/${article.slug}`}>
                               <Image
                                 alt={article.title}
