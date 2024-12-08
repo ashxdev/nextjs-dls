@@ -74,13 +74,12 @@ export default async function Events() {
                             {formatDate(article.publishedAt)}
                           </time>
                         </dd>
-                        <dt className="sr-only">Author</dt>
+                        <dt className="sr-only">Image</dt>
                         <dd className="mt-6 flex gap-x-4">
                           <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                             <Link href={`/events/${article.slug}`}>
                               <Image
                                 alt={article.title}
-                                sizes="(min-width: 768px) 42rem, 100vw"
                                 src={article.meta?.image?.thumbnailURL as string}
                                 className="h-96 w-96 lg:h-48 lg:w-48 object-cover grayscale"
                               />
