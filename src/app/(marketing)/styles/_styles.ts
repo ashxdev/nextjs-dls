@@ -6,7 +6,7 @@ const BachataCouple = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbachata-couple.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbachata-couple.mp4&version_id=null' },
     date: '2024-06',
     service: 'Web development, CMS',
     testimonial: {
@@ -25,7 +25,7 @@ const BachataLadyStyle = {
         'Unseal is the first NFT platform where users can mint and trade NFTs of their own personal health records, allowing them to take control of their data.',
         'We built out the blockchain infrastructure that supports Unseal. Unfortunately, we took a massive loss on this project when Unseal’s cryptocurrency, PlaceboCoin, went to zero.',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbachata-lady-style.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbachata-lady-style.mp4&version_id=null' },
     date: '2024-10-01',
     service: 'Blockchain development',
     testimonial: {
@@ -43,7 +43,7 @@ const BodyBallet = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbody-ballet.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fbody-ballet.mp4&version_id=null' },
     date: '2024-01-01',
     service: 'Web development, CMS',
     testimonial: {
@@ -62,7 +62,7 @@ const Сontemporary = {
         'Find love in the face of fear — Phobia is a dating app that matches users based on their mutual phobias so they can be scared together.',
         'We worked with Phobia to develop a new onboarding flow. A user is shown pictures of common phobias and we use the microphone to detect which ones make them scream, feeding the results into the matching algorithm.',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fcontemporary.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fcontemporary.mp4&version_id=null' },
 
     date: '2024-11-01',
     service: 'App development',
@@ -82,7 +82,7 @@ const HighHeels = {
         'Find love in the face of fear — Phobia is a dating app that matches users based on their mutual phobias so they can be scared together.',
         'We worked with Phobia to develop a new onboarding flow. A user is shown pictures of common phobias and we use the microphone to detect which ones make them scream, feeding the results into the matching algorithm.',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fhigh-heels.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fhigh-heels.mp4&version_id=null' },
 
     date: '2024-09-01',
     service: 'App development',
@@ -101,7 +101,7 @@ const HipHop = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fhip-hop-kids.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fhip-hop-kids.mp4&version_id=null' },
     date: '2024-12-01',
     service: 'Web development, CMS',
     testimonial: {
@@ -119,7 +119,7 @@ const KPop = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fk-pop.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fk-pop.mp4&version_id=null' },
     date: '2024-08-01',
     service: 'Web development, CMS',
     testimonial: {
@@ -137,7 +137,7 @@ const Waacking = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fwaacking.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fwaacking.mp4&version_id=null' },
     date: '2024-07',
     service: 'Web development, CMS',
     testimonial: {
@@ -155,7 +155,7 @@ const Choreography = {
     summary: [
         'Це нова сміла тенденція в сучасній хореографії, що поєднує в собі енергію хіп-хопа, стиль джаз-фанка, техніку джаза, гламур бурлеска і жіночі пози з вогу',
     ],
-    video: { src: 'https://minio-console.simplesolution.guru/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fсhoreography.mp4&version_id=null' },
+    video: { src: 'https://minio-console.dance-line.studio/api/v1/buckets/dance-line-studio/objects/download?preview=true&prefix=videos%2Fсhoreography.mp4&version_id=null' },
     date: '2024-07-01',
     service: 'Web development, CMS',
     testimonial: {
