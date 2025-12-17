@@ -44,7 +44,7 @@ export async function GET(req: NextRequest): Promise<Response> {
     let user
 
     try {
-      user = jwt.verify(token, payload.secret)
+      user = jwt.verify(token!, payload.secret)
     } catch (error) {
       payload.logger.error('Error verifying token for live preview:', error)
     }
